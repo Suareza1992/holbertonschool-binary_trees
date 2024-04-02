@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../holbertonschool-low_level_programming"
+		},
+		{
+			"name": "holbertonschool-printf",
+			"path": "../holbertonschool-printf"
+		}
+	],
+	"settings": {
+		"editor.autoIndent": "none",
+		"editor.detectIndentation": false
+	}
+}
