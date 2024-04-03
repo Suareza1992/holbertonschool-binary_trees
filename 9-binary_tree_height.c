@@ -1,4 +1,9 @@
 #include "binary_trees.h"
+/**
+*binary_tree_height - Function return count of height of binary tree
+*@tree: tree to be handled
+*Return: Return height of tree
+*/
 size_t binary_tree_height(const binary_tree_t *tree)
 {
 	if (tree == NULL)

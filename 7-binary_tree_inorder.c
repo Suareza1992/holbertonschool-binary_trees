@@ -1,5 +1,12 @@
 #include "binary_trees.h"
-void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int)) {
+/**
+*binary_tree_inorder - function traverses tree in order
+*@tree: tree to bre traversed
+*@func: provided function
+*Return: Void if succesful
+*/
+void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
+{
 if (tree == NULL || func == NULL)
 	return;
 
