@@ -1,30 +1,45 @@
-#ifndef _BINARY_TREES_H_
-#define _BINARY_TREES_H_
+#ifndef BINARY_TREES_H
+#define BINARY_TREES_H
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 /**
- * struct binary_tree_s - Binary tree node
- *
- * @n: Integer stored in the node
- * @parent: Pointer to the parent node
- * @left: Pointer to the left child node
- * @right: Pointer to the right child node
+ * enum avl_state_n - mneumonic for unique states when balancing AVL trees
+ * @AVL_RETURN: return to caller
+ * @AVL_CREATE: create and insert a node
+ * @AVL_CHILD_L: coming from child's left subtree
+ * @AVL_CHILD_R: coming from child's right subtree
  */
-struct binary_tree_s
+typedef enum avl_state_n
+{
+    AVL_RETURN = 0,
+    AVL_LCHILD,
+    AVL_RCHILD,
+    AVL_CREATE
+} avl_state_t;
+
+/**
+ * struct binary_tree_s - a binary tree node
+ * @n: an integer
+ * @parent: a pointer to the parent node
+ * @left: a pointer to the left child node
+ * @right: a pointer to the right child node
+ */
+typedef struct binary_tree_s
 {
     int n;
     struct binary_tree_s *parent;
     struct binary_tree_s *left;
     struct binary_tree_s *right;
-};
-typedef struct binary_tree_s binary_tree_t;
+} binary_tree_t;
+
 typedef struct binary_tree_s bst_t;
 typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 
-/*Task Prototypes*/
+/* Function Prototypes */
 void binary_tree_print(const binary_tree_t *);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
